@@ -87,7 +87,7 @@ public class gameManager : MonoBehaviour
             x = 2;
             _matches--;
             if (_matches == 0)
-                gameTime.GetComponent<timeScript>().endGame();
+                gameTime.GetComponent<TimeCounter>().endGame();
         }
 
 
