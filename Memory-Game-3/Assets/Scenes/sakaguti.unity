@@ -178,7 +178,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.53479
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -202,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094583215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 13.5, y: 4.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -243,46 +243,35 @@ MonoBehaviour:
   - {fileID: 1268517610168746127, guid: c0501239834dbd640a84483f4ad67d75, type: 3}
   - {fileID: 1219311675304488671, guid: 3bd33d5a21c1df74fba6f94e9204b473, type: 3}
   - {fileID: 167804877132829203, guid: d9ee6bd0e9eb0f34c96aeebbe99da38e, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  cardBack: {fileID: 0}
+  - {fileID: 5110861621955537294, guid: d11202508ee513e4d838958bf4427c2c, type: 3}
+  - {fileID: 9146417002054401490, guid: d7772afe45a66aa409967c770f8791cc, type: 3}
+  - {fileID: 6815595509277811319, guid: 1ea2ce88066145f4f9b314a247f6200f, type: 3}
+  - {fileID: 4388193869134481485, guid: d013834ad4570414e84a5af2874503b6, type: 3}
+  - {fileID: 8651682797035956276, guid: c99ab43071ba5e44f9c74df935f99f25, type: 3}
+  - {fileID: 6435876659729017633, guid: 43ee18269590e4f4c88dbd4e58857d39, type: 3}
+  - {fileID: 2457889890202624288, guid: 22fcb0107df4bff4fb0272314b0572eb, type: 3}
+  - {fileID: 3222309248088373165, guid: cb7dacce9eca4e545b2dbf4e10c2786e, type: 3}
+  - {fileID: 226569608326192425, guid: c51bfe8ef59dda1458ad57bcb4079cb7, type: 3}
+  - {fileID: 2944724433345157205, guid: 99e93da8566a43744a5ed586ae8382aa, type: 3}
+  - {fileID: 6950142536470419557, guid: 8febf3ea825aa604a92f6e0a9d8c826e, type: 3}
+  - {fileID: 2502190690779066949, guid: ddf3f092643b4924cb36b25a8381611b, type: 3}
+  - {fileID: 2523300769489163523, guid: e5f13efe83ee73a4496e2aa65c2d82d3, type: 3}
+  - {fileID: 5672281766252724997, guid: bfbf8d48912c7d94d8050c3c6c0302ae, type: 3}
+  - {fileID: 3715757722518177610, guid: fb5f346494b754741902a49a0a857a22, type: 3}
+  - {fileID: 8359591342152482130, guid: f96bc0c8b4a96d04f95c669d074e2bde, type: 3}
+  - {fileID: 3987451707988948595, guid: d9816f084c13f744187adee1b23c98a2, type: 3}
+  - {fileID: 7872058599722033734, guid: a8094e9666f6efa49bb3936780d9670f, type: 3}
+  - {fileID: 6090925264700606913, guid: d5aa615e1d06fbd43bc7182e4f40093e, type: 3}
+  - {fileID: 4663976647979209279, guid: d19af01387f96c94c8bfd2d2646bf3e7, type: 3}
+  - {fileID: 5396546125207293412, guid: bb9f00ccd0283564bb2ab228abe0692a, type: 3}
+  - {fileID: 5749480235106923950, guid: c47ae3938e628284bad810b1faf0ffec, type: 3}
+  - {fileID: 7079267738447489444, guid: 7c4d7557f0021e741917febc6eccba3c, type: 3}
+  - {fileID: 8916326652089777919, guid: e1d74b9f7cdb2f04094e941737080968, type: 3}
+  - {fileID: 5964389412562547430, guid: 8481c0aa6cc1c4545a80c6494bcf4764, type: 3}
+  - {fileID: 2107341416332256631, guid: 1ac1a06c9c84bdc42aec3da29366513f, type: 3}
+  - {fileID: 6880437617912704849, guid: 511931aa9e9d2e84aa330435343d07c9, type: 3}
+  - {fileID: 1988582456059403630, guid: 75832818567f11449964fa29725d894e, type: 3}
+  - {fileID: 5522568332716915142, guid: 05b9d32bc19f545448e6d18a2e32f107, type: 3}
+  - {fileID: 763459956127479429, guid: 4ac4ed6798e59284baa665a75479a8fe, type: 3}
+  - {fileID: 1348781446898245904, guid: 06441c766a9e30149955ba9a8c9ffeb7, type: 3}
+  cardBack: {fileID: 3507001274965878097, guid: 7627e95b2734fda499a2ce5c7e8a434d, type: 3}
