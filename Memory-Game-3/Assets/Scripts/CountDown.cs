@@ -6,38 +6,45 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-    
-    public static float CountDownTime;      // カウントダウンタイム
+    [SerializeField]
+    public float CountdownMinutes;   　　   // カウントダウンタイム（分）
+    [SerializeField]
+    public float CountdownSeconds;  　　    // カウントダウンタイム（秒）
     public GameObject GameOverText;         //ゲームオーバーUI
     public GameObject exchangeButton;       //リトライボタン
+    public GameObject LoadTitleButton;      //タイトルシーンへ移動するボタン
     public Text TextCountDown;              // カウントダウンの表示用テキストUI
+
 
     void Start()
     {
+        TextCountDown = GetComponent<Text>();
+        CountdownSeconds = CountdownMinutes * 60;
+
         //最初は表示しない
         GameOverText.SetActive(false);
         exchangeButton.SetActive(false);
-
-        CountDownTime = 15.0f;              // カウントダウン開始秒数をセット　現在はデバック観点から１５秒
+        LoadTitleButton.SetActive(false);
     }
 
     void Update()
     {
         // カウントダウンタイムを表示
-        TextCountDown.text = String.Format("Time: {0:00.00}", CountDownTime);
-        CountDownTime -= Time.deltaTime;
-
+        CountdownSeconds -= Time.deltaTime;
+        var span = new TimeSpan(0, 0, (int)CountdownSeconds);
+        TextCountDown.text = span.ToString(@"mm\:ss");
         //１０秒切ったら色を赤に変える
-        if (CountDownTime < 10.0f)
+        if (CountdownSeconds < 10.0f)
         {
             TextCountDown.color = Color.red;
         }
         // 0.0秒以下になったらカウントダウンタイムを0.0で固定、UI系のの表示
-        if (CountDownTime <= 0.0f)
+        if (CountdownSeconds <= 0.0f)
         {
-            CountDownTime = 0.0f;
+            CountdownSeconds = 0.0f;
             GameOverText.SetActive(true);
             exchangeButton.SetActive(true);
+            LoadTitleButton.SetActive(true);
         }
 
     }   
