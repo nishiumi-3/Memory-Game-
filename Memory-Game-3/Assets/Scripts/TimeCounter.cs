@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class TimeCounter : MonoBehaviour
 {
-    public Text counterText;
-    public bool timeCounter = true;
+    public Text counterText;  //タイマーの表示用テキストUI
+    public bool timeCounter = true;  //チェッカー
     public float seconds, minutes;
 
     void Start()

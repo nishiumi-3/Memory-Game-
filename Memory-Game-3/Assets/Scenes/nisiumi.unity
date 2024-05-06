@@ -579,6 +579,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5140683925070020215, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5140683925515816070, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
       propertyPath: m_Name
       value: CountDown
