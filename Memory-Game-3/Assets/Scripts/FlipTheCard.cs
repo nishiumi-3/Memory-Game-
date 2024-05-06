@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public class FlipTheCard : MonoBehaviour
 {
     private GameObject clickedObject;
     private SpriteRenderer sprite;

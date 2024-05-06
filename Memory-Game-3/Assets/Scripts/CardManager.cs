@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
-    public GameObject[] cards = new GameObject[52]; //カードの表52種類を格納する配列
+    public GameObject[] cards = new GameObject[40]; //カードの表52種類を格納する配列
     public GameObject cardBack; //カードの裏を格納する変数
 
     // Start is called before the first frame update
@@ -14,12 +14,12 @@ public class CardManager : MonoBehaviour
         System.Random random = new System.Random();
         cards = cards.OrderBy(x => random.Next()).ToArray(); //配列をシャッフルする
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 13; j++)
+            for (int j = 0; j < 10; j++)
             {
                 //カードの表の画像を4x13の形に等間隔で並べる
-                GameObject cardPrefab = Instantiate(cards[i * 13 + j],
+                GameObject cardPrefab = Instantiate(cards[i * 10 + j],
                 new Vector2(j * 3, i * 4), Quaternion.identity);
 
                 //カードの裏面を表面の子オブジェクトとして生成する
