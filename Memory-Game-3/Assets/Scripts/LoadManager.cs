@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class LoadManager : MonoBehaviour
 {
+    //タイトルへ移動
     public void LoadTitleScene(string TitleScene)
     {
         SceneManager.LoadScene(TitleScene);
     }
 
+    //説明文へ移動
     public void LoadExplanationScene(string ExplanationScene)
     {
         SceneManager.LoadScene(ExplanationScene);
     }
 
+    //ゲームシーンへ移動
     public void LoadGameScene(string GameScene)
     {
         SceneManager.LoadScene(GameScene);
@@ -25,6 +28,8 @@ public class LoadManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    //ゲームを終了
     public void EndGame()
     {
         Application.Quit();
