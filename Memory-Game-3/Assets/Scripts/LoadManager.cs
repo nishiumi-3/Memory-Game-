@@ -20,6 +20,11 @@ public class LoadManager : MonoBehaviour
         SceneManager.LoadScene(GameScene);
     }
 
+    //ボタンを押してリトライさせる
+    public void LoadSceneRetry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void EndGame()
     {
         Application.Quit();
