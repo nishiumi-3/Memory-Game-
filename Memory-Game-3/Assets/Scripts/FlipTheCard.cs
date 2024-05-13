@@ -51,11 +51,16 @@ public class FlipTheCard : MonoBehaviour
         {
             if (clickedObject1.name.Substring(1) == clickedObject2.name.Substring(1)) //カードの数字が一致しているかを判定
             {
+                Thread.Sleep(500); //1秒待機
+
+                // 一致した場合、カードを消去する
+                Destroy(clickedObject1);
+                Destroy(clickedObject2);
                 count = 0; //カード選択の状態を0に戻す
             }
             else
             {
-                Thread.Sleep(2000); //2秒待機
+                Thread.Sleep(500); //1秒待機
                 clickedObject1.AddComponent<BoxCollider>(); //当たり判定を復活させる
                 clickedObject2.AddComponent<BoxCollider>();
                 sprite1.sortingOrder = 0; //Order in Layerを0に戻す
