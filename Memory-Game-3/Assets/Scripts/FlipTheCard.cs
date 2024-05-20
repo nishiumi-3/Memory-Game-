@@ -17,7 +17,8 @@ public class FlipTheCard : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0)) // マウス左をクリックした場合
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // カメラから左クリックした座標にレイを飛ばす
+                // カメラから左クリックした座標にレイを飛ばす
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
                 RaycastHit hit = new RaycastHit();
 
                 if (Physics.Raycast(ray, out hit))
@@ -49,7 +50,8 @@ public class FlipTheCard : MonoBehaviour
         }
         else //カードを2枚選択した場合
         {
-            if (clickedObject1.name.Substring(1) == clickedObject2.name.Substring(1)) //カードの数字が一致しているかを判定
+            //カードの数字が一致しているかを判定
+            if (clickedObject1.name.Substring(1) == clickedObject2.name.Substring(1)) 
             {
                 Thread.Sleep(700); //0.7秒待機
 
