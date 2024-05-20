@@ -14,7 +14,7 @@ public class CountDown : MonoBehaviour
     public GameObject exchangeButton;       //リトライボタン
     public GameObject LoadTitleButton;      //タイトルシーンへ移動するボタン
     public Text TextCountDown;              // カウントダウンの表示用テキストUI
-
+    public GameObject Card;                 //カード
 
     void Start()
     {
@@ -45,6 +45,7 @@ public class CountDown : MonoBehaviour
             GameOverText.SetActive(true);
             exchangeButton.SetActive(true);
             LoadTitleButton.SetActive(true);
+            Card.SetActive(false);
         }
 
     }   
