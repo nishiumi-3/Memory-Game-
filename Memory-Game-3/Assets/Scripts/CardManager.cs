@@ -21,10 +21,11 @@ public class CardManager : MonoBehaviour
                 //カードの表の画像を4x10の形に等間隔で並べる
                 GameObject cardPrefab = Instantiate(cards[i * 10 + j],
                 new Vector2(j * 3, i * 4), Quaternion.identity);
+                cardPrefab.transform.parent = transform;
 
                 //カードの裏面を表面の子オブジェクトとして生成する
                 GameObject backPrefab = Instantiate(cardBack, cardPrefab.transform);
-
+                backPrefab.transform.parent = cardPrefab.transform;
                 //カードの表にはBoxColliderをアタッチする
                 cardPrefab.AddComponent<BoxCollider>();
 
