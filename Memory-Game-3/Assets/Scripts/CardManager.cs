@@ -36,7 +36,5 @@ public class CardManager : MonoBehaviour
                 backPrefab.GetComponent<SpriteRenderer>().sortingOrder = 1; 
             }
         }
-    }
-
-  
+    } 
 }
