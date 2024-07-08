@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ShortcutKeys : MonoBehaviour
 {
     private CountDown countDownScript;
-    public CardManager cardManager; 
+    private CardManager cardManager; 
 
     void Start()
     {
