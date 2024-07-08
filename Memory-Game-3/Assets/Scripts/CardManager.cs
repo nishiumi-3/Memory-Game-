@@ -8,6 +8,10 @@ public class CardManager : MonoBehaviour
     public GameObject[] cards = new GameObject[40]; //カードの表40種類を格納する配列
     public GameObject cardBack; //カードの裏を格納する変数
 
+    //西海が追加
+    public List<GameObject> backPrefabs = new List<GameObject>(); // カードの裏面オブジェクトを格納するリスト
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,10 @@ public class CardManager : MonoBehaviour
                 //カードの裏面を表面の子オブジェクトとして生成する
                 GameObject backPrefab = Instantiate(cardBack, cardPrefab.transform);
                 backPrefab.transform.parent = cardPrefab.transform;
+
+                //西海が追加
+                backPrefabs.Add(backPrefab);
+
                 //カードの表にはBoxColliderをアタッチする
                 cardPrefab.AddComponent<BoxCollider>();
 
