@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1d7a9a35f214a42a228a87fc004a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameClearText: {fileID: 1975746331}
-  exchangeButton: {fileID: 508671026}
+  GameClearText: {fileID: 1975746331}
+  ExchangeButton: {fileID: 508671026}
   LoadTitleButton: {fileID: 1691772120}
 --- !u!114 &733385268
 MonoBehaviour:
