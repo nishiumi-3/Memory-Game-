@@ -55,7 +55,7 @@ public class FlipTheCard : MonoBehaviour
             {
                 Thread.Sleep(700); //0.7秒待機
 
-                // 一致した場合、カードを消去する
+                // 一致した場合、カードを消去
                 Destroy(clickedObject1);
                 Destroy(clickedObject2);
                 count = 0; //カード選択の状態を0に戻す

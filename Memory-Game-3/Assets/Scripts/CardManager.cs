@@ -12,7 +12,7 @@ public class CardManager : MonoBehaviour
     void Start()
     {
         System.Random random = new System.Random();
-        cards = cards.OrderBy(x => random.Next()).ToArray(); //配列をシャッフルする
+        cards = cards.OrderBy(x => random.Next()).ToArray(); //配列をシャッフル
 
         for (int i = 0; i < 4; i++)
         {
@@ -22,16 +22,16 @@ public class CardManager : MonoBehaviour
                 GameObject cardPrefab = Instantiate(cards[i * 10 + j],
                 new Vector2(j * 3, i * 4), Quaternion.identity);
 
-                //カードの裏面を表面の子オブジェクトとして生成する
+                //カードの裏面を表面の子オブジェクトとして生成
                 GameObject backPrefab = Instantiate(cardBack, cardPrefab.transform);
 
-                //カードの表にはBoxColliderをアタッチする
+                //カードの表にBoxColliderをアタッチ
                 cardPrefab.AddComponent<BoxCollider>();
 
-                //カードの裏のローカル座標を(0, 0)に設定する
+                //カードの裏のローカル座標(0, 0)に設定
                 backPrefab.transform.localPosition = Vector2.zero;
 
-                //カードの裏のOrder in Layerを1に設定する
+                //カードの裏のOrder in Layerを1に設定
                 backPrefab.GetComponent<SpriteRenderer>().sortingOrder = 1; 
             }
         }
