@@ -12,15 +12,15 @@ public class FlipTheCard : MonoBehaviour
     private int clearCount = 0; // 消されたカードのペア数を記録する変数
     private int totalCards = 20; // 全てのカードの枚数（20ペア）
 
-    public GameObject gameClearText; // "Game Clear" を表示するためのUI Text
-    public GameObject exchangeButton;       //リトライボタン
+    public GameObject GameClearText;        //Game ClearUI
+    public GameObject ExchangeButton;       //リトライボタン
     public GameObject LoadTitleButton;      //タイトルシーンへ移動するボタン
 
     void Start()
     {
-        // 初期化時にGame Clearのテキストを非表示にする
-        gameClearText.SetActive(false);
-        exchangeButton.SetActive(false);
+        // 初期化時に非表示にする
+        GameClearText.SetActive(false);
+        ExchangeButton.SetActive(false);
         LoadTitleButton.SetActive(false);
     }
 
@@ -79,8 +79,8 @@ public class FlipTheCard : MonoBehaviour
                 // すべてのカードが消されたかをチェック
                 if (clearCount == totalCards )
                 {
-                    gameClearText.SetActive(true);
-                    exchangeButton.SetActive(true);
+                    GameClearText.SetActive(true);
+                    ExchangeButton.SetActive(true);
                     LoadTitleButton.SetActive(true);
                     //表示
                 }

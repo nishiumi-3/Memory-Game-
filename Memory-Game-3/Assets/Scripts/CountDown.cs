@@ -6,18 +6,20 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-    [SerializeField] GameObject CameraObj;
+    [SerializeField] 
+    GameObject CameraObj;
 
     [SerializeField]
     public float CountdownMinutes;   　　   // カウントダウンタイム（分）
     [SerializeField]
     public float CountdownSeconds;  　　    // カウントダウンタイム（秒）
+
     public GameObject GameOverText;         //ゲームオーバーUI
+
+    public GameObject GameClear;            //ゲームクリアUI
     public GameObject exchangeButton;       //リトライボタン
     public GameObject LoadTitleButton;      //タイトルシーンへ移動するボタン
     public Text TextCountDown;              // カウントダウンの表示用テキストUI
-
-    public GameObject GameClear;            //ゲームクリアUI
 
     void Start()
     {
@@ -34,9 +36,9 @@ public class CountDown : MonoBehaviour
 
     void Update()
     {
+        //クリアオブジェクトが非アクティブの時だけ時間は動く
         if (!GameClear.activeSelf)
         {
-
             // カウントダウンタイムを表示
             CountdownSeconds -= Time.deltaTime;
             var span = new TimeSpan(0, 0, (int)CountdownSeconds);
@@ -59,9 +61,6 @@ public class CountDown : MonoBehaviour
                     GameObject.Destroy(n.gameObject);
                 }
             }
-
         }
-
     }
-
 }
