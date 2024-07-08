@@ -283,6 +283,7 @@ MonoBehaviour:
   - {fileID: 763459956127479429, guid: 4ac4ed6798e59284baa665a75479a8fe, type: 3}
   - {fileID: 1348781446898245904, guid: 06441c766a9e30149955ba9a8c9ffeb7, type: 3}
   cardBack: {fileID: 3507001274965878097, guid: 7627e95b2734fda499a2ce5c7e8a434d, type: 3}
+  backPrefabs: []
 --- !u!224 &878057533 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4686199158644452533, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
@@ -497,7 +498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -178}
+  m_AnchoredPosition: {x: -30, y: -180}
   m_SizeDelta: {x: 700, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975746333
@@ -549,9 +550,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1627040483}
     m_Modifications:
+    - target: {fileID: 4686199157436276835, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199157436276836, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199157436276836, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199157830766672, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199157830766673, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199157830766673, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350
+      objectReference: {fileID: 0}
     - target: {fileID: 4686199158189469077, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
       propertyPath: m_Name
       value: CountDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199158275244218, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199158275244219, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686199158275244219, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 4686199158644452533, guid: ce30f900162a52c4e8b26e66836e9f86, type: 3}
       propertyPath: m_Pivot.x
