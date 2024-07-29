@@ -44,7 +44,7 @@ public class CountDown : MonoBehaviour
             var span = new TimeSpan(0, 0, (int)CountdownSeconds);
             TextCountDown.text = span.ToString(@"mm\:ss");
             //‚P‚O•bØ‚Á‚½‚çF‚ğÔ‚É•Ï‚¦‚é
-            if (CountdownSeconds < 10.0f)
+            if (CountdownSeconds < 30.0f)
             {
                 TextCountDown.color = Color.red;
             }

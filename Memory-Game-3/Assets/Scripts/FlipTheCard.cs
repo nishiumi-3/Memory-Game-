@@ -16,6 +16,15 @@ public class FlipTheCard : MonoBehaviour
     public GameObject ExchangeButton;       //リトライボタン
     public GameObject LoadTitleButton;      //タイトルシーンへ移動するボタン
 
+
+    public AudioSource audioSource;         // 効果音のAudioSource
+    public AudioClip correctSound;          // 正解時の効果音
+    public AudioClip incorrectSound;        // 失敗時の効果音
+
+
+    public GameObject correctEffectPrefab;  // 正解時のエフェクトプレハブ
+    public GameObject incorrectEffectPrefab;// 失敗時のエフェクトプレハブ
+
     void Start()
     {
         // 初期化時に非表示にする
@@ -76,6 +85,12 @@ public class FlipTheCard : MonoBehaviour
 
                 clearCount++; // 消されたカードのペア数を増やす
                 Debug.Log(clearCount);
+
+                // 正解時の効果音を再生
+                audioSource.PlayOneShot(correctSound);
+                StartCoroutine(PlayEffect(correctEffectPrefab, clickedObject1.transform.position));
+                StartCoroutine(PlayEffect(correctEffectPrefab, clickedObject2.transform.position));
+
                 // すべてのカードが消されたかをチェック
                 if (clearCount == totalCards )
                 {
@@ -93,7 +108,29 @@ public class FlipTheCard : MonoBehaviour
                 sprite1.sortingOrder = 0; // Order in Layerを0に戻す
                 sprite2.sortingOrder = 0;
                 count = 0; // カード選択の状態を0に戻す
+
+                // 失敗時の効果音を再生
+                audioSource.PlayOneShot(incorrectSound);
+                StartCoroutine(PlayEffect(incorrectEffectPrefab, clickedObject1.transform.position));
+                StartCoroutine(PlayEffect(incorrectEffectPrefab, clickedObject2.transform.position));
             }
         }
     }
+
+    private IEnumerator PlayEffect(GameObject effectPrefab, Vector3 position)
+    {
+        Vector3 adjustedPosition = position + new Vector3(0, 0, 2); // Z軸方向に2ユニット移動
+        GameObject effect = Instantiate(effectPrefab, adjustedPosition, Quaternion.identity);
+        ParticleSystem ps = effect.GetComponent<ParticleSystem>();
+        if (ps != null)
+        {
+            var psRenderer = ps.GetComponent<ParticleSystemRenderer>();
+            psRenderer.sortingLayerName = "Foreground"; // 目的の sorting layer 名
+            psRenderer.sortingOrder = 3; // 目的の order in layer
+        }
+        yield return new WaitForSeconds(1f);
+        Destroy(effect);
+    }
+
+
 }
