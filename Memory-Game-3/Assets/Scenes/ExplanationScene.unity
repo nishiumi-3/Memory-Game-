@@ -421,7 +421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u623B\u308B"
+  m_Text: Back
 --- !u!222 &1295437472
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -532,6 +532,7 @@ MonoBehaviour:
   - {fileID: 5217704347237311883, guid: 6736c3de68601a247a74ad98bab1d887, type: 3}
   - {fileID: 4388193869134481485, guid: d013834ad4570414e84a5af2874503b6, type: 3}
   cardBack: {fileID: 3507001274965878097, guid: 7627e95b2734fda499a2ce5c7e8a434d, type: 3}
+  backPrefabs: []
 --- !u!114 &1326672750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,9 +545,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1d7a9a35f214a42a228a87fc004a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameClearText: {fileID: 0}
-  exchangeButton: {fileID: 0}
+  GameClearText: {fileID: 0}
+  ExchangeButton: {fileID: 0}
   LoadTitleButton: {fileID: 0}
+  audioSource: {fileID: 0}
+  correctSound: {fileID: 0}
+  incorrectSound: {fileID: 0}
+  correctEffectPrefab: {fileID: 0}
+  incorrectEffectPrefab: {fileID: 0}
 --- !u!1 &1352984628
 GameObject:
   m_ObjectHideFlags: 0
