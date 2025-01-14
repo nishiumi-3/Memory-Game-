@@ -31,6 +31,8 @@ public class FlipTheCard : MonoBehaviour
         GameClearText.SetActive(false);
         ExchangeButton.SetActive(false);
         LoadTitleButton.SetActive(false);
+
+        Application.targetFrameRate = 60; // ターゲットFPSを60に設定
     }
 
     // Update is called once per frame
@@ -73,48 +75,83 @@ public class FlipTheCard : MonoBehaviour
         }
         else // カードを2枚選択した場合
         {
-            // カードの数字が一致しているかを判定
-            if (clickedObject1.name.Substring(1) == clickedObject2.name.Substring(1))
+            StartCoroutine(CheckCardsCoroutine());  
+        }
+    }
+
+    private IEnumerator CheckCardsCoroutine()
+    {
+        // null チェックを追加
+        if (clickedObject1 == null || clickedObject2 == null)
+        {
+            Debug.LogWarning("One or both selected objects are null. Skipping check.");
+            count = 0; // カード選択の状態をリセット
+            yield break; // 処理を中断
+        }
+
+        // 一致しているかを判定
+        if (clickedObject1.name.Substring(1) == clickedObject2.name.Substring(1))
+        {
+            yield return new WaitForSeconds(0.7f); // 0.7秒待機
+
+            // さらに null チェックを行い安全に操作
+            if (clickedObject1 != null && clickedObject2 != null)
             {
-                Thread.Sleep(700); // 0.7秒待機
+                // エフェクト再生のため位置を保存
+                Vector3 position1 = clickedObject1.transform.position;
+                Vector3 position2 = clickedObject2.transform.position;
 
                 // 一致した場合、カードを消去
                 Destroy(clickedObject1);
                 Destroy(clickedObject2);
-                count = 0; // カード選択の状態を0に戻す
+                count = 0; // カード選択の状態をリセット
 
                 clearCount++; // 消されたカードのペア数を増やす
                 Debug.Log(clearCount);
 
                 // 正解時の効果音を再生
                 audioSource.PlayOneShot(correctSound);
-                StartCoroutine(PlayEffect(correctEffectPrefab, clickedObject1.transform.position));
-                StartCoroutine(PlayEffect(correctEffectPrefab, clickedObject2.transform.position));
+                StartCoroutine(PlayEffect(correctEffectPrefab, position1));
+                StartCoroutine(PlayEffect(correctEffectPrefab, position2));
 
                 // すべてのカードが消されたかをチェック
-                if (clearCount == totalCards )
+                if (clearCount == totalCards)
                 {
                     GameClearText.SetActive(true);
                     ExchangeButton.SetActive(true);
                     LoadTitleButton.SetActive(true);
-                    //表示
                 }
             }
-            else
-            {
-                Thread.Sleep(700); // 0.7秒待機
-                clickedObject1.AddComponent<BoxCollider>(); // 当たり判定を復活させる
-                clickedObject2.AddComponent<BoxCollider>();
-                sprite1.sortingOrder = 0; // Order in Layerを0に戻す
-                sprite2.sortingOrder = 0;
-                count = 0; // カード選択の状態を0に戻す
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.7f); // 0.7秒待機
 
-                // 失敗時の効果音を再生
-                audioSource.PlayOneShot(incorrectSound);
+            // 一致しない場合の処理
+            if (clickedObject1 != null)
+            {
+                clickedObject1.AddComponent<BoxCollider>();
+                sprite1.sortingOrder = 0;
                 StartCoroutine(PlayEffect(incorrectEffectPrefab, clickedObject1.transform.position));
+            }
+            if (clickedObject2 != null)
+            {
+                clickedObject2.AddComponent<BoxCollider>();
+                sprite2.sortingOrder = 0;
                 StartCoroutine(PlayEffect(incorrectEffectPrefab, clickedObject2.transform.position));
             }
+
+            count = 0; // カード選択の状態をリセット
+
+            // 失敗時の効果音を再生
+            audioSource.PlayOneShot(incorrectSound);
         }
+
+        // 最後にオブジェクトの参照をリセット
+        clickedObject1 = null;
+        clickedObject2 = null;
+        sprite1 = null;
+        sprite2 = null;
     }
 
     private IEnumerator PlayEffect(GameObject effectPrefab, Vector3 position)
